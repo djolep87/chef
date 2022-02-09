@@ -8,15 +8,30 @@
                 <h4>Email: {{$user->email}}</h4>
                 <h4></h4>
             </div>
+            <hr>
             <div class="title-area">
-                <h5 class="card-title">Role</h5>
+                <h3 class="card-title">Role</h3>
                 <p class="card-text">
-                    ......
+                    @if($user->roles->isNotEmpty())
+                        @foreach ($user->roles as $role )
+                            <span class="badge badge-secondary">
+                                {{$role->name}}
+                            </span>
+                        @endforeach
+                    @endif
                 </p>
-                <h5 class="card-title">Permissions</h5>
+                <hr>
+                <h3 class="card-title">Permissions</h3>
                 <p class="card-text">
-                    ......
+                    @if($user->permissions->isNotEmpty())
+                        @foreach ($user->permissions as $permission )
+                            <span class="badge badge-secondary">
+                                {{$permission->name}}
+                            </span>
+                        @endforeach
+                    @endif
                 </p>
+                <hr>
             </div>
             <a href="{{url()->previous()}}" class="rn-btn"><i data-feather="arrow-left"></i>Go Back</a>
 

@@ -29,8 +29,24 @@
                             <th scope="row">{{$user['id']}}</th>
                             <td>{{$user['name']}}</td>
                             <td>{{$user['email']}}</td>
-                            <td>role</td>
-                            <td>permission</td>
+                            <td>
+                                @if($user->roles->isNotEmpty())
+                                    @foreach ($user->roles as $role )
+                                        <span class="badge badge-secondary">
+                                            {{$role->name}}
+                                        </span>
+                                    @endforeach
+                                @endif
+                            </td>
+                            <td>
+                                @if($user->permissions->isNotEmpty())
+                                    @foreach ($user->permissions as $permission )
+                                        <span class="badge badge-secondary">
+                                            {{$permission->name}}
+                                        </span>
+                                    @endforeach
+                                @endif
+                            </td>
                             <td>
                                 <a href="/users/{{$user['id']}}"><i class="fa feather-eye"></i></a>
                                 <a href="/users/{{$user['id']}}/edit"><i class="fa feather-edit-3"></i></a>
