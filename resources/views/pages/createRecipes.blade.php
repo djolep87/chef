@@ -16,7 +16,7 @@
             <div class="contact-form-wrapper">
                 <div class="introduce">
                     <form class="rnt-contact-form rwt-dynamic-form row" id="contact-form" method="POST" action="/createRecipes" enctype="multipart/form-data">
-                        {{ csrf_field() }}
+                        {{csrf_field()}}
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="contact-name">Recipes Name</label>
