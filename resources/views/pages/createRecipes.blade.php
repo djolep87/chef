@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-< class="rn-contact-area rn-section-gap section-separator" id="contacts">
+<div class="rn-contact-area rn-section-gap section-separator" id="contacts">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -28,7 +28,7 @@
                         <div class="col-lg-12" >
                             {{-- <button type="button" name="add" id="add" class="rn-btn col-lg-2">Add More</button> <br><br> --}}
                             <div class="form-group" >
-                                <table>
+                                <table class="contact-about-area">
                                     @foreach($ingredients as $ingredient)
                                         <tr>
                                             <td><input {{ $ingredient->value ? 'checked' : null }} data-id="{{ $ingredient->id }}" type="checkbox" class="form-control-lg-2 ingredient-enable"></td>

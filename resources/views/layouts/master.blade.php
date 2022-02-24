@@ -127,7 +127,7 @@
                 </div>
             </div>
         </header>
-        
+        <button class="menu-button">Menu</button>
         <main id="home" class="slider-style-6 rn-section-gap align-items-center" >
             @yield('content')
         </main>

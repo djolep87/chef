@@ -50,7 +50,7 @@
                             <td>
                                 <a href="/users/{{$user['id']}}"><i class="fa feather-eye"></i></a>
                                 <a href="/users/{{$user['id']}}/edit"><i class="fa feather-edit-3"></i></a>
-                                <form action="/users/{{$user->id}}" method="POST">
+                                <form action="/users/{{$user->id}}" onsubmit="return confirm('{{ trans('Are you sure to delete this user?') }}');" method="POST">
                                     {{method_field('DELETE')}}
                                     {{csrf_field()}}
                                     <button type="submit"><i class="fas feather-trash-2"></i></button>

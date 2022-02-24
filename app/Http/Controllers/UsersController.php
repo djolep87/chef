@@ -109,9 +109,9 @@ class UsersController extends Controller
     {
         $roles = Role::get();
         $userRole = $user->roles->first();
-        if($userRole != null){
+        if ($userRole != null) {
             $rolePermissions = $userRole->allRolePermissions;
-        }else{
+        } else {
             $rolePermissions = null;
         }
         $userPermissions = $user->permissions;

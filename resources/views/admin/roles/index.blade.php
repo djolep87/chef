@@ -7,9 +7,12 @@
             <div class="col-10">
                 <h1>Roles</h1>
             </div>
-            <div class="col-2">
-                <a href="/roles/create" class="rn-btn " role="button"><i class="fa feather-plus"></i>Add role</a>
-            </div>
+            
+                <div class="col-2">
+                    <a href="/roles/create" class="rn-btn " role="button"><i class="fa feather-plus"></i>Add role</a>
+                </div>
+                
+            
         </div>
 
         <div class="contact-about-area">
@@ -25,7 +28,7 @@
                 </thead>
                 <tbody class="contact-about-area">
                     @if(count($roles) > 0)
-                        @foreach ($roles as $role)
+                        @foreach ($roles as $role)                            
                             <tr>
                                 <th scope="row">{{$role['id']}}</th>
                                 <td>{{$role['name']}}</td>
@@ -42,7 +45,7 @@
                                 <td>
                                     <a href="/roles/{{$role['id']}}"><i class="fa feather-eye"></i></a>
                                     <a href="/roles/{{$role['id']}}/edit"><i class="fa feather-edit-3"></i></a>
-                                    <form action="/roles/{{$role->id}}" method="POST">
+                                    <form action="/roles/{{$role->id}}" onsubmit="return confirm('{{ trans('Are you sure to delete this role?') }}');" method="POST">
                                         {{method_field('DELETE')}}
                                         {{csrf_field()}}
                                         <button type="submit"><i class="fas feather-trash-2"></i></button>
