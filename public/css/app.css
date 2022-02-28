@@ -171,15 +171,7 @@ sup {
     top: -0.5em;
 }
 
-.menu-button {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .menu-button {
-        display: block;
-    }
-
+@media (max-width: 1730px) {
     .left-header-style {
         left: -100%;
     }
@@ -7492,7 +7484,7 @@ button.bg-dark:focus {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1730px) {
     .d-xl-none {
         display: none !important;
     }
